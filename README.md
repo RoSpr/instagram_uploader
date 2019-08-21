@@ -1,6 +1,6 @@
 # Instagram photo uploader
 
-This program downloads photos from 82nd SpaceX launch and from Hubble collection chosen by the user, resizes them to 700x700px and makes them square by adding black stripes on two sides, after that the script uploads photos to Instagram.
+photo_downloader.py downloads photos from SpaceX launch and from Hubble collection both chosen by the user, resizes them to 700x700px and makes them square by adding black stripes on two sides. instagram_downloader.py uploads photo chosen by the user from 'images' folder to Instagram.
 
 ### How to install
 
