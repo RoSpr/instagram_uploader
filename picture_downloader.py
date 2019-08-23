@@ -53,20 +53,19 @@ def fetch_hubble_collection(collection_name):
 
 def resize_img(filename, new_filename, max_size):
     img = Image.open(f"{PATH}\images\{filename}")
-    w = img.size[0]
-    h = img.size[1]
-    if h > w:
+    img_width, img_height = img.size
+
+    if img_height > img_width:
         height = max_size
-        ratio = (height / h)
-        width = int(w * ratio)
-        img = img.resize((width, height), Image.ANTIALIAS)
-        img.save(f"{PATH}\images\{new_filename}")
+        ratio = height / img_height
+        width = int(img_width * ratio)
     else:
         width = max_size
-        ratio = (width / w)
-        height = int(h * ratio)
-        img = img.resize((width, height), Image.ANTIALIAS)
-        img.save(f"{PATH}\images\{new_filename}")
+        ratio = width / img_width
+        height = int(img_height * ratio)
+
+    img = img.resize((width, height), Image.ANTIALIAS)
+    img.save(f"{PATH}\images\{new_filename}")
 
 
 def make_black_background(filename, new_filename):

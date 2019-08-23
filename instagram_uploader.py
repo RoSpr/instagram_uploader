@@ -4,7 +4,6 @@ import os
 from instabot import Bot
 
 PATH = os.path.dirname(os.path.abspath(__file__))
-print(PATH)
 
 
 def post_instagram(picture_name):
@@ -28,5 +27,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     picture_name = args.picture_name
 
-    result = post_instagram(picture_name)
-    print(result)
+    post_instagram(picture_name)
